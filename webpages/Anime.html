@@ -1,21 +1,107 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" style="background-color:tan;">
 <head>
-    <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="../style/index.css">
     <meta charset="utf-8" />
     <title>Dreamcraft Network</title>
+    <style>
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+            /* Dropdown button on hover & focus */
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #2980B9;
+            }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                /* Change color of dropdown links on hover */
+                .dropdown-content a:hover {
+                    background-color: #ddd
+                }
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <1div>
+            <center>
+                <div class="topnav">
+                    <a class="active" href="../index.html">Home</a>
+                    <a href="Anime.html">Anime</a>
+                    <a href="Contact.html">Contact</a>
+                    <a href="About.html">About</a>
+                </div>
+            </center>
+    </header>
+    <footer>
+        <center>
+            <p style="font-size:x-large">Please Select An Anime!</p>
+        </center>
+        <center>
             <div class="dropdown">
-                <button class="dropbtn">Home</button>
-                <div class="dropdown-content">
-                    <a href="../index.html">Home</a>
+                <button onclick="myFunction()" class="dropbtn">The Rising Of The Shield Hero</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="Anime-The-Rising-Of-The-Shield-Hero-Season-1/Season-1.html">Season 1</a>
+                    <a href="Anime-The-Rising-Of-The-Shield-Hero-Season-1/Season-2.html">Season 2</a>
+                    <a href="Anime-The-Rising-Of-The-Shield-Hero-Season-1/Season-3.html">Season 3</a>
                 </div>
             </div>
-        </1div>
-    </header>
+            <script>
+                /* When the user clicks on the button,
+                    toggle between hiding and showing the dropdown content */
+                function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+                // Close the dropdown menu if the user clicks outside of it
+                window.onclick = function (event) {
+                    if (!event.target.matches('.dropbtn')) {
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                        }
+                    }
+                }
+            </script>
+        </center>
+    </footer>
 </body>
 </html>
